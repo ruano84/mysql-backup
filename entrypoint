@@ -199,7 +199,7 @@ else
     for target in ${DB_DUMP_TARGET}; do
       echo "comparing ${target} with az"
       if [  ${target} == "az" ]; then
-        azure_upload "${TMPDIR}/${SOURCE}" "${TARGET}" ${AZ_ACCOUNT} ${AZ_CONTAINER} ${AZURE_SAS}
+        azure_upload "${TMPDIR}/${SOURCE}" "${BACKUP_NAME_PREFIX}${TARGET}" ${AZ_ACCOUNT} ${AZ_CONTAINER} ${AZURE_SAS}
       else
         backup_target ${target}
       fi
